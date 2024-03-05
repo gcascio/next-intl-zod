@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "english": "English",
+    "german": "German"
+  },
+  "home": {
+    "title": "next-intl zod example"
+  },
+  "form": {
+    "username": "Username",
+    "age": "Age"
+  }
+}
