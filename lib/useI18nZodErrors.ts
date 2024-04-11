@@ -5,5 +5,6 @@ import { makeZodI18nMap } from './zodErrorMap';
 export const useI18nZodErrors = () => {
   const t = useTranslations('zod');
   const tForm = useTranslations('form');
-  z.setErrorMap(makeZodI18nMap({ t, tForm }));
+  const tCustom = useTranslations('customErrors');
+  z.setErrorMap(makeZodI18nMap({ t, tForm, tCustom }));
 };

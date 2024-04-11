@@ -9,5 +9,8 @@
   "form": {
     "username": "Username",
     "age": "Age"
+  },
+  "customErrors": {
+    "admin_username_error": "Nice try!"
   }
 }

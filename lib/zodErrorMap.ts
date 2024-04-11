@@ -55,13 +55,14 @@ const getKeyAndValues = (
 type ZodI18nMapOption = {
   t: ReturnType<typeof useTranslations>;
   tForm?: ReturnType<typeof useTranslations>;
+  tCustom?: ReturnType<typeof useTranslations>;
   ns?: string | readonly string[];
 };
 
 type MakeZodI18nMap = (option: ZodI18nMapOption) => ZodErrorMap;
 
 export const makeZodI18nMap: MakeZodI18nMap = (option) => (issue, ctx) => {
-  const { t, tForm } = {
+  const { t, tForm, tCustom } = {
     ...option,
   };
 
@@ -202,7 +203,7 @@ export const makeZodI18nMap: MakeZodI18nMap = (option) => (issue, ctx) => {
         'errors.custom',
       );
 
-      message = t(key as Parameters<typeof t>[0], {
+      message = (tCustom || t)(key as Parameters<typeof t>[0], {
         ...values,
         ...path,
       });

@@ -9,5 +9,8 @@
   "form": {
     "usernamex": "Nutzername",
     "age": "Alter"
+  },
+  "customErrors": {
+    "admin_username_error": "Netter Versuch!"
   }
 }

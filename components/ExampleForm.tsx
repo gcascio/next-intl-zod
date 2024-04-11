@@ -6,7 +6,10 @@ import * as z from 'zod';
 import { useI18nZodErrors } from '@/lib/useI18nZodErrors';
 
 const schema = z.object({
-  username: z.string().min(3),
+  username: z
+    .string()
+    .min(3)
+    .refine((value) => value !== 'admin', { params: { i18n: "admin_username_error" } }),
   age: z.number().min(18),
 });
 
